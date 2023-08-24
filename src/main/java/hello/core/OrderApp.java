@@ -12,8 +12,12 @@ public class OrderApp {
 
 
     public static void main(String[] args) {
-        OrderService orderService = new OrderServiceImpl();
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+//        OrderService orderService = new OrderServiceImpl();
+//        MemberService memberService = new MemberServiceImpl();
+
+        OrderService orderService = appConfig.orderService();
+        MemberService memberService = appConfig.memberService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
